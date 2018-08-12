@@ -1,6 +1,6 @@
 var practice_trials = [
 	{question: "Сколько на картинке красных точек?",
-	 picture: "images/question_mark_03.jpg"},
+	 picture: "images/" + Math.floor(Math.random()*433) + "red_dots_a.png"},
 	{question: "Сколько на картинке красных точек?",
-	 picture: "images/question_mark_04.png"},
+	 picture: "images/" + Math.floor(Math.random()*433) + "red_dots_a.png"},
 ];

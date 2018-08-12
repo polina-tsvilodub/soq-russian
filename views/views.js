@@ -123,8 +123,6 @@ var main = {
         var viewTemplate = $('#main-view').html();
         $('#main').html(Mustache.render(viewTemplate, {
             question: exp.trial_info.main_trials[CT].question,
-        //    option1:  exp.trial_info.main_trials[CT].option1,
-      //      option2:  exp.trial_info.main_trials[CT].option2,
             picture:  exp.trial_info.main_trials[CT].picture
         }));
 
