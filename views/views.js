@@ -62,15 +62,20 @@ var practice = {
         $('#main').html(Mustache.render(viewTemplate, {
         title: this.title,
         question: exp.trial_info.practice_trials[CT].question,
-        picture: exp.trial_info.practice_trials[CT].picture
+        picture: exp.trial_info.practice_trials[CT].picture,
+        questionRightPart: exp.trial_info.practice_trials[CT].questionRightPart,
+        questionRightPart2: exp.trial_info.practice_trials[CT].questionRightPart2
         }));
         startingTime = Date.now();
         var next = $('#next');
         var textInput = $('textarea');
+        var textInput2 = $('#second');
         textInput.on('keyup', function() {
             // if the text is longer than (in this case) 10 characters without the spaces
             // the 'next' button appears
-            if (textInput.val().trim().length > 10) {
+            if (textInput.val().trim().length > 2) {
+                next.removeClass('nodisplay');
+            } else if (textInput2.val().trim().length > 2) {
                 next.removeClass('nodisplay');
             } else {
                 next.addClass('nodisplay');
@@ -83,6 +88,7 @@ var practice = {
                 trial_number: CT+1,
                 question: exp.trial_info.practice_trials[CT].question,
                 text_input: textInput.val().trim(),
+                text_input2: textInput2.val().trim(),
                 RT: RT
             };
             exp.trial_data.push(trial_data);
@@ -123,7 +129,9 @@ var main = {
         var viewTemplate = $('#main-view').html();
         $('#main').html(Mustache.render(viewTemplate, {
             question: exp.trial_info.main_trials[CT].question,
-            picture:  exp.trial_info.main_trials[CT].picture
+            picture:  exp.trial_info.main_trials[CT].picture,
+            questionRightPart: exp.trial_info.main_trials[CT].questionRightPart,
+            questionRightPart2: exp.trial_info.main_trials[CT].questionRightPart2
         }));
 
 //        // update the progress bar based on how many trials there are in this round
@@ -134,10 +142,13 @@ var main = {
         // and additional information are stored in exp.trial_info
         var next = $('#next');
         var textInput = $('textarea');
+        var textInput2 = $('#second');
         textInput.on('keyup', function() {
             // if the text is longer than (in this case) 10 characters without the spaces
             // the 'next' button appears
-            if (textInput.val().trim().length > 10) {
+            if (textInput.val().trim().length > 2) {
+                next.removeClass('nodisplay');
+            } else if (textInput2.val().trim().length > 2) {
                 next.removeClass('nodisplay');
             } else {
                 next.addClass('nodisplay');
@@ -150,6 +161,7 @@ var main = {
                 trial_number: CT+1,
                 question: exp.trial_info.main_trials[CT].question,
                 text_input: textInput.val().trim(),
+                text_input2: textInput2.val().trim(),
                 RT: RT
             };
             exp.trial_data.push(trial_data);
@@ -160,7 +172,7 @@ var main = {
 //        return view;
     },
 
-	trials : 4
+	trials : 10
 };
 
 var postTest = {

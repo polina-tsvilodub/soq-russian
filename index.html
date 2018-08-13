@@ -94,7 +94,7 @@
 			<h1>{{ title }}</h1>
 			{{/ title }}
 			<div class="picture", align = "center">
-			<img src={{picture}} alt="a picture" height="100" width="100">
+			<img src={{picture}} alt="a picture" height="250" width="250">
 			</div>
 
 		  <p class="question">
@@ -104,8 +104,12 @@
 		  </p>
 
 			<p class="answer-container">
-				<textarea name="textbox-input" rows=10 cols=50 class="textbox-input" />
+				<textarea name="textbox-input" rows=1 cols=25 class="textbox-input" />
+				{{questionRightPart}}
+				<textarea name="textbox-input" id="second" rows=1 cols=25 class="textbox-input" />
+				{{questionRightPart2}}
 			</p>
+
 
 			<button id="next" class="nodisplay">next</button>
 		</div>
@@ -129,7 +133,7 @@
 		<div class="view">
 
 		<div class="picture", align = "center">
-			<img src={{picture}} alt="a picture" height="100" width="100">
+			<img src={{picture}} alt="a picture" height="250" width="250">
 		</div>
 
 		<p class="question">
@@ -139,7 +143,10 @@
 		</p>
 
 		<p class="answer-container">
-			<textarea name="textbox-input" rows=10 cols=50 class="textbox-input" />
+			<textarea name="textbox-input" rows=1 cols=25 class="textbox-input" />
+			{{questionRightPart}}
+			<textarea name="textbox-input" id="second" rows=1 cols=25 class="textbox-input" />
+			{{questionRightPart2}}
 		</p>
 
 		<button id="next" class="nodisplay">next</button>
