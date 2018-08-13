@@ -31,7 +31,7 @@ var instructions = {
     // instruction's title
     "title": "Интструкции",
     // instruction's text
-    "text": "Дополните одно из предложений описанием количества красных точек. Пожалуйста, используйте только количественные местоимения.",
+    "text": "Дополните ОДНО из предложений описанием количества красных точек. Пожалуйста, используйте только количественные местоимения.",
     // instuction's slide proceeding button text
     "buttonText": "Пробный эксперимент",
     render: function() {
@@ -54,7 +54,7 @@ var instructions = {
 
 var practice = {
     name: 'practice',
-    "title": "Practice trial",
+    "title": "Пробный эксперимент",
     // render function renders the view
     render: function (CT) {
 
@@ -73,9 +73,7 @@ var practice = {
         textInput.on('keyup', function() {
             // if the text is longer than (in this case) 10 characters without the spaces
             // the 'next' button appears
-            if (textInput.val().trim().length > 2) {
-                next.removeClass('nodisplay');
-            } else if (textInput2.val().trim().length > 2) {
+            if ((textInput.val().trim().length > 0)^(textInput2.val().trim().length > 0)) {
                 next.removeClass('nodisplay');
             } else {
                 next.addClass('nodisplay');
@@ -89,6 +87,7 @@ var practice = {
                 question: exp.trial_info.practice_trials[CT].question,
                 text_input: textInput.val().trim(),
                 text_input2: textInput2.val().trim(),
+                picture: exp.trial_info.practice_trials[CT].picture,
                 RT: RT
             };
             exp.trial_data.push(trial_data);
@@ -146,9 +145,7 @@ var main = {
         textInput.on('keyup', function() {
             // if the text is longer than (in this case) 10 characters without the spaces
             // the 'next' button appears
-            if (textInput.val().trim().length > 2) {
-                next.removeClass('nodisplay');
-            } else if (textInput2.val().trim().length > 2) {
+            if ((textInput.val().trim().length > 0)^(textInput2.val().trim().length > 0)) {
                 next.removeClass('nodisplay');
             } else {
                 next.addClass('nodisplay');
@@ -162,6 +159,7 @@ var main = {
                 question: exp.trial_info.main_trials[CT].question,
                 text_input: textInput.val().trim(),
                 text_input2: textInput2.val().trim(),
+                picture: exp.trial_info.main_trials[CT].picture,
                 RT: RT
             };
             exp.trial_data.push(trial_data);
@@ -177,9 +175,9 @@ var main = {
 
 var postTest = {
     name: 'postTest',
-    "title": "Additional Info",
-    "text": "Answering the following questions is optional, but will help us understand your answers.",
-    "buttonText": "Continue",
+    "title": "Дополнительная информация",
+    "text": "Ответы на эти вопросы помогут нам понять Ваши ответы.",
+    "buttonText": "Закончить",
     // render function renders the view
     render : function() {
 
