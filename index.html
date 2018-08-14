@@ -65,7 +65,7 @@
 			<button id="next">{{ button }}</button>
 			{{/ button }}
 			{{^ button }}
-			<button id="next">Begin Experiment</button>
+			<button id="next">Начать эксперимент</button>
 			{{/ button }}
 		</div>
 		</script>
@@ -106,12 +106,14 @@
 			<p class="answer-container">
 				<textarea name="textbox-input" rows=1 cols=25 class="textbox-input" />
 				{{questionRightPart}}
+			</p>
+			<p class="answer-container">
 				<textarea name="textbox-input" id="second" rows=1 cols=25 class="textbox-input" />
 				{{questionRightPart2}}
 			</p>
 
 
-			<button id="next" class="nodisplay">next</button>
+			<button id="next" class="nodisplay">далее</button>
 		</div>
 		</script>
 
@@ -124,7 +126,7 @@
 				<p class="text">{{ text }}</p>
 			</section>
 			{{/ text }}
-			<button id="next">Begin Experiment</button>
+			<button id="next">Начать эксперимент</button>
 		</div>
 		</script>
 
@@ -145,11 +147,13 @@
 		<p class="answer-container">
 			<textarea name="textbox-input" rows=1 cols=25 class="textbox-input" />
 			{{questionRightPart}}
+		</p>
+		<p class="answer-container">
 			<textarea name="textbox-input" id="second" rows=1 cols=25 class="textbox-input" />
 			{{questionRightPart2}}
 		</p>
 
-		<button id="next" class="nodisplay">next</button>
+		<button id="next" class="nodisplay">далее</button>
 
 		</div>
 		</script>
@@ -201,7 +205,7 @@
 				<button id="next">{{ buttonText }}</button>
 				{{/ buttonText }}
 				{{^ buttonText }}
-				<button id="next">Next</button>
+				<button id="next">далее</button>
 				{{/ buttonText }}
 			</form>
 		</div>

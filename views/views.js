@@ -81,12 +81,16 @@ var practice = {
         });
         next.on('click', function() {
             RT = Date.now() - startingTime; // measure RT before anything else
+            if (textInput.val().trim().length > 0) {
+              answer = textInput.val().trim()
+            } else {
+              answer = textInput2.val().trim()
+            };
             trial_data = {
                 trial_type: "practice",
                 trial_number: CT+1,
                 question: exp.trial_info.practice_trials[CT].question,
-                text_input: textInput.val().trim(),
-                text_input2: textInput2.val().trim(),
+                response : answer,
                 picture: exp.trial_info.practice_trials[CT].picture,
                 RT: RT
             };
@@ -153,12 +157,16 @@ var main = {
         });
         next.on('click', function() {
             RT = Date.now() - startingTime; // measure RT before anything else
+            if (textInput.val().trim().length > 0) {
+              answer = textInput.val().trim()
+            } else {
+              answer = textInput2.val().trim()
+            };
             trial_data = {
                 trial_type: "main",
                 trial_number: CT+1,
                 question: exp.trial_info.main_trials[CT].question,
-                text_input: textInput.val().trim(),
-                text_input2: textInput2.val().trim(),
+                response: answer,
                 picture: exp.trial_info.main_trials[CT].picture,
                 RT: RT
             };
