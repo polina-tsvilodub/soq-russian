@@ -175,7 +175,7 @@ var main = {
 //        return view;
     },
 
-	trials : 10
+	trials : 20
 };
 
 var postTest = {
