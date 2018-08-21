@@ -3,7 +3,7 @@ var intro = {
     // introduction title
     "title": "Добро пожаловать!",
     // introduction text
-    "text": "Спасибо за участие в исследовании. Пожалуйста, опишите картинки, которые Вы увидите.",
+    "text": "Спасибо за участие в исследовании. Вы увидите картинки с черными и красными точками. Пожалуйста, опишите картинки. Любой ответ - правильный.",
     // introduction's slide proceeding button text
     "buttonText": "Начать эксперимент",
     // render function renders the view
@@ -31,7 +31,7 @@ var instructions = {
     // instruction's title
     "title": "Интструкции",
     // instruction's text
-    "text": "Дополните ОДНО из предложений описанием количества красных точек. Пожалуйста, используйте только количественные местоимения (например, 'несколько', 'много' и т. д.).",
+    "text": "Дополните ОДНО из предложений описанием количества красных точек. Пожалуйста, используйте любые слова, описывающие количество (например, 'несколько', 'много' и т. д.), но НЕ используйте числительные и цифры.",
     // instuction's slide proceeding button text
     "buttonText": "Пробный эксперимент",
     render: function() {
@@ -88,6 +88,7 @@ var practice = {
                 response1 : textInput.val().trim(),
                 response2: textInput2.val().trim(),
                 picture: exp.trial_info.practice_trials[CT].picture,
+                dots_number: exp.trial_info.practice_trials[CT].picture.slice(7, -14),
                 RT: RT
             };
             exp.trial_data.push(trial_data);
@@ -165,6 +166,7 @@ var main = {
                 response1: textInput.val().trim(),
                 response2: textInput2.val().trim(),
                 picture: exp.trial_info.main_trials[CT].picture,
+                dots_number: exp.trial_info.main_trials[CT].picture.slice(7, -14),
                 RT: RT
             };
             exp.trial_data.push(trial_data);

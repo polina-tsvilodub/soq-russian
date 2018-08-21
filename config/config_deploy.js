@@ -1,7 +1,7 @@
 var config_deploy = {
-    
+
     // obligatory fields
-	
+
     // the experimentID is needed to recover data from the _babe server app
 	// you receive the experimentID when you create the experiment using the _babe server app
 	"experimentID": "3",
@@ -9,12 +9,12 @@ var config_deploy = {
 	"serverAppURL" : "https://mcmpact.ikw.uni-osnabrueck.de/babe/api/submit_experiment/",
 
     // set deployment method; use one of:
-    //'debug', 'localServer', 'MTurk', 
+    //'debug', 'localServer', 'MTurk',
     // 'MTurkSandbox', 'Prolific', 'directLink'
     "deployMethod" : "directLink", 
-    
+
     // optional fields
-    
+
     // who to contact in case of trouble
-    "contact_email": "ptsvilodub@uni-osnabrueck.de", 
+    "contact_email": "ptsvilodub@uni-osnabrueck.de",
 };
