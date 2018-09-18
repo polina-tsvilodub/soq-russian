@@ -21,6 +21,7 @@ exp.customize = function() {
     // randomize main trial order, but keep practice trial order fixed
     this.trial_info.main_trials = _.shuffle(main_trials.concat(practice_trials));
     this.trial_info.practice_trials = practice_trials;
+//    this.trial_info.obligatory_trials = obligatory_trials;
 
     // adds progress bars to the views listed
     // view's name is the same as object's name

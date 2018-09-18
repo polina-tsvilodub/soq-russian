@@ -84,7 +84,7 @@ var practice = {
             trial_data = {
                 trial_type: "practice",
                 trial_number: CT+1,
-                question: exp.trial_info.practice_trials[CT].question,
+              //  question: exp.trial_info.practice_trials[CT].question,
                 response1 : textInput.val().trim(),
                 response2: textInput2.val().trim(),
                 picture: exp.trial_info.practice_trials[CT].picture,
@@ -128,7 +128,8 @@ var main = {
         // fill variables in view-template
         var viewTemplate = $('#main-view').html();
         $('#main').html(Mustache.render(viewTemplate, {
-            question: exp.trial_info.main_trials[CT].question,
+          //  question: exp.trial_info.main_trials[CT].question,
+            question: "Сколько на картинке красных точек?",
             picture:  exp.trial_info.main_trials[CT].picture,
             questionRightPart: exp.trial_info.main_trials[CT].questionRightPart,
             questionRightPart2: exp.trial_info.main_trials[CT].questionRightPart2
@@ -162,7 +163,7 @@ var main = {
             trial_data = {
                 trial_type: "main",
                 trial_number: CT+1,
-                question: exp.trial_info.main_trials[CT].question,
+              //  question: exp.trial_info.main_trials[CT].question,
                 response1: textInput.val().trim(),
                 response2: textInput2.val().trim(),
                 picture: exp.trial_info.main_trials[CT].picture,
@@ -177,7 +178,8 @@ var main = {
 //        return view;
     },
 
-	trials : 20
+	trials : 26
+
 };
 
 var postTest = {
