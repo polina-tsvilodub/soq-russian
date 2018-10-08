@@ -16,8 +16,37 @@ var intro = {
             button: this.buttonText
         }));
 
+        var prolificId = $('#prolific-id');
+        var IDform = $('#prolific-id-form');
+        var next = $('#next');
+
+        var showNextBtn = function() {
+            if (prolificId.val().trim() !== "") {
+                next.removeClass('nodisplay');
+            } else {
+                next.addClass('nodisplay');
+            }
+        };
+
+        if (config_deploy.deployMethod !== "Prolific") {
+            IDform.addClass('nodisplay');
+            next.removeClass('nodisplay');
+        }
+
+        prolificId.on('keyup', function() {
+            showNextBtn();
+        });
+
+        prolificId.on('focus', function() {
+            showNextBtn();
+        });
+
         // moves to the next view
-        $('#next').on('click', function(e) {
+        next.on('click', function() {
+            if (config_deploy.deployMethod === "Prolific") {
+                exp.global_data.prolific_id = prolificId.val().trim();
+            }
+
             exp.findNextView();
         });
 
@@ -31,7 +60,7 @@ var instructions = {
     // instruction's title
     "title": "Интструкции",
     // instruction's text
-    "text": "Дополните ОДНО из предложений описанием количества красных точек. Пожалуйста, используйте любые слова, описывающие количество (например, 'несколько', 'много' и т. д.), но НЕ используйте числительные и цифры.",
+    "text": "Дополните ОДНО из предложений описанием количества красных точек. Пожалуйста, используйте любые слова, описывающие количество (например, 'несколько', 'много' и т. д.), но НЕ используйте числительные и цифры (например, 10, сто и т. д.).",
     // instuction's slide proceeding button text
     "buttonText": "Пробный эксперимент",
     render: function() {

@@ -1,7 +1,7 @@
 var must_trials = [
 	{picture: "images/0red_dots_"+_.shuffle(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"])[0]+".png",
 	 questionRightPart: "точек - красного цвета.",
-	 questionRightPart2: "точки - красного цвета."} , 
+	 questionRightPart2: "точки - красного цвета."} ,
 	{picture: "images/432red_dots_"+_.shuffle(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"])[0]+".png",
 	 questionRightPart: "точек - красного цвета.",
 	 questionRightPart2: "точки - красного цвета."}];
