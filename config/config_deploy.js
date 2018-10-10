@@ -18,5 +18,5 @@ var config_deploy = {
     // who to contact in case of trouble
   "contact_email": "ptsvilodub@uni-osnabrueck.de",
 
-	"prolificURL": "https://app.prolific.ac/submissions/complete?cc=U3OI6L4V"
+	"prolificURL": "https://app.prolific.ac/submissions/complete?cc=U3OI6L4V",
 };
